@@ -1,0 +1,33 @@
+sliding window approach
+if 'k' given,
+-> at first find the desired output for first window up to k [array/string]
+-> for next sliding the loop will start from the value k and remove its left element and add it up the right element
+
+
+=> two maps are give or built now if we need to find matching keys or in other words if map1 contains any key of map 2
+    auto m1_it1 = map1.begin();
+    auto m2_it2 = map2.begin();
+    while(m1_it1 != map1.end())
+    {
+        char ch = m2_it2->first;
+        auto fn_it = map1.find(ch);
+        flag=0;
+        if(fn_it != map1.end())
+        {
+            flag=1;
+        }
+        ++m2_it2;
+        ++m1_it1++;
+   }
+=> if we want to delete front elements in a vector
+-> reverse the vector
+-> then pop_back
+# sort a pair by the second value
+bool comp(pair<int,int> x,pair<int,int> y)
+{
+  if(x.second != y.second)
+   return x.second<y.second;
+return x.first<y.first;
+}
+vector<pair<int,int>>p;
+sort(p.begin(),p.end().comp)

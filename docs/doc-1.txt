@@ -1,0 +1,7 @@
+=> if we want to delete front elements in a vector
+-> reverse the vector
+-> then pop_back
+# sort a pair in descending order
+sort(v.rbegin(),r.end())
+
+=> emplace_back is used for storing original row index
