@@ -20,27 +20,26 @@ ll ceil(ll a,ll b)
 }
 void solve()
 { 
-       vector<int>temperatures={73,74,75,71,69,72,76,73};
-       int n=temperatures.size();
-        stack <int> st;
-        vector<int> res(n);
+        vector<int>prices={8,4,6,2,3};
+        int n=prices.size();
+        vector<int>res(n);
+        stack<int>st;
         for(int i=n-1; i>=0; i--)
         {
-            while(!st.empty() && temperatures[i]>=temperatures[st.top()])
+            while(!st.empty() && prices[i]<st.top())
             {
                 st.pop();
             }
             if(st.empty())
             {
-                res[i]=0;
+                res[i]=prices[i];
             }
             else
             {
-               res[i]=st.top()-i; 
+                res[i]=prices[i]-st.top();
             }
-            st.push(i);
-        }
-    
+            st.push(prices[i]);
+        }    
 }  
 int main()
 {
