@@ -1,1 +1,6 @@
 output
+*.exe
+*.o
+*.obj
+.vscode/tasks.json
+.vscode/launch.json
